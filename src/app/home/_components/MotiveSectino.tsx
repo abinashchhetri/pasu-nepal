@@ -8,13 +8,13 @@ const MotiveSectino = () => {
       containerClassName="bg-[#E3F8E1] relative "
       className="py-12 md:py-16 lg:py-[120px]"
     >
-      <span className="absolute -top-[3%] lg:-top-[5%] left-0">
+      <span className="absolute -top-[3%] lg:-top-[8%] left-0 z-30">
         <Image
           src="/pawsu-icons/pinkpaw.svg"
           alt="motosection"
           width={100}
           height={100}
-          className="w-12 h-12 lg:w-[100px] lg:h-[100px]"
+          className="w-12 h-12 lg:w-[120px] lg:h-[120px]"
         />
       </span>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 w-full justify-between ">

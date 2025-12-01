@@ -1,6 +1,7 @@
 import AboutSection from "./_components/AboutSection";
 import HeroSection from "./_components/HeroSection";
 import MotiveSectino from "./_components/MotiveSectino";
+import ProductSection from "./_components/ProductSection";
 
 const page = () => {
   return (
@@ -8,6 +9,7 @@ const page = () => {
       <HeroSection />
       <AboutSection />
       <MotiveSectino />
+      <ProductSection />
     </div>
   );
 };

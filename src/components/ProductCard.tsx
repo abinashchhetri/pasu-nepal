@@ -9,8 +9,6 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, backgroundColor }: ProductCardProps) => {
-  // Extract base color from backgroundColor prop (remove /20)
-  // backgroundColor is like 'bg-[#EFAAC4]/20' or 'bg-[#93B89D]/20'
   const baseColorMatch = backgroundColor.match(/\[#([A-F0-9]+)\]/);
   const baseColor = baseColorMatch ? `#${baseColorMatch[1]}` : '#EFAAC4';
 
@@ -33,7 +31,7 @@ const ProductCard = ({ product, backgroundColor }: ProductCardProps) => {
       <div className='flex flex-col items-center justify-center gap-2 lg:gap-3'>
         <h4 className='lg:text-2xl text-xl font-bold'>{product.title}</h4>
         <p className='lg:text-base text-sm font-normal'>{product.description}</p>
-        <Link href="#">
+        <Link href={`/products/${product.slug}`}>
           <Button 
             className='rounded-full text-white hover:opacity-80' 
             size='lg'

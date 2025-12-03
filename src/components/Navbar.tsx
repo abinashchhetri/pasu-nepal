@@ -27,9 +27,9 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/", label: "Store" },
-    { href: "/", label: "About" },
-    { href: "/", label: "Contact Us" },
+    { href: "/products", label: "Store" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact Us" },
   ];
 
   return (
@@ -62,10 +62,12 @@ const Navbar = () => {
 
           {/* Desktop Button */}
           <div className="hidden lg:flex">
-            <Button className="flex items-center gap-2 px-4 py-2 text-white bg-primary rounded-md">
-              <ShoppingCartIcon className="w-4 h-4" />
-              <span className="text-base xl:text-lg font-medium">Shop Now</span>
-            </Button>
+            <Link href="/products">
+              <Button className="flex items-center gap-2 px-4 py-2 text-white bg-primary rounded-md">
+                <ShoppingCartIcon className="w-4 h-4" />
+                <span className="text-base xl:text-lg font-medium">Shop Now</span>
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -133,13 +135,14 @@ const Navbar = () => {
 
               {/* Mobile Button */}
               <div className="mt-auto pt-6">
-                <Button
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-primary rounded-md"
-                  onClick={closeMenu}
-                >
-                  <ShoppingCartIcon className="w-5 h-5" />
-                  <span className="text-base font-medium">Shop Now</span>
-                </Button>
+                <Link href="/products" onClick={closeMenu}>
+                  <Button
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-primary rounded-md"
+                  >
+                    <ShoppingCartIcon className="w-5 h-5" />
+                    <span className="text-base font-medium">Shop Now</span>
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

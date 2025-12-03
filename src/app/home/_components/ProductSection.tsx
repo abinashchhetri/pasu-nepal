@@ -1,6 +1,8 @@
 import MaxWidthContainer from '@/components/MaxWidthContainer'
-import ProductCard from '@/components/ProductCard'
+import ProductListingCard from '@/components/ProductListingCard'
 import { productsData } from '@/lib/constants/products'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 const ProductSection = () => {
   return (
@@ -13,14 +15,19 @@ const ProductSection = () => {
         <p className='font-normal text-sm sm:text-base md:text-lg leading-relaxed'>ᴡᴇ ᴄʀᴇᴀᴛᴇ ʜᴀɴᴅᴄʀᴀꜰᴛᴇᴅ ᴀᴄᴄᴇꜱꜱᴏʀɪᴇꜱ ᴛʜᴀᴛ ᴄᴇʟᴇʙʀᴀᴛᴇ ᴛʜᴇ ɪɴᴄʟᴜꜱɪᴠɪᴛʏ ᴏꜰ ᴏᴜʀ 𝗣𝗘𝗧𝗦 ᴀɴᴅ ᴜꜱ</p>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6'>
-        {productsData.map((product, index) => {
-          // First row (index 0-2): pink, Second row (index 3-5): green
-          const row = Math.floor(index / 3);
-          const backgroundColor = row === 0 ? 'bg-[#EFAAC4]/20' : 'bg-[#93B89D]/20';
-          return (
-            <ProductCard key={product.id} backgroundColor={backgroundColor} product={product} />
-          );
-        })}
+        {productsData.map((product) => (
+          <ProductListingCard key={product.id} product={product} />
+        ))}
+      </div>
+      <div className='mt-8'>
+        <Link href="/products">
+          <Button 
+            className='bg-primary text-white hover:bg-[#be497e] rounded-full px-8 py-6 text-lg'
+            size='lg'
+          >
+            View All Products
+          </Button>
+        </Link>
       </div>
     </MaxWidthContainer>
   )
